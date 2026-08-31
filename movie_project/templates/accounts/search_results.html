@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+</head>
+<body>
+    <h2>Search Results for "{{ query }}"</h2>
+
+    {% for movie in movies %}
+
+        <div>
+            <a href="{% url 'movie_detail' movie.id %}">
+                <h3> {{ movie.title }} </h3>
+            </a>
+
+            <img src=" {{ movie.poster.url }}" width="150" height="220">
+            <p>Rating : {{ movie.rating }} </p>
+            <p>Category : {{ movie.category.name }} </p>
+        </div>
+        <br><br>
+
+        {% empty %}
+            <p>No Movies found.</p>
+        {% endfor %}
+
+
+        <a href="{% url 'home' %}"> Back to Home</a>
+</body>
+</html>

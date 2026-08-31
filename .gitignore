@@ -1,0 +1,8 @@
+movie_project/venv/
+movie_project/__pycache__/
+movie_project/**/__pycache__/
+*.pyc
+movie_project/db.sqlite3
+movie_project/.env
+movie_project/.vscode/
+movie_project/.idea/

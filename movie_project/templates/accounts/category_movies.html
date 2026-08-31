@@ -1,0 +1,73 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}
+category
+{% endblock %}
+
+{% block content %}
+
+<div class="card shadow border-0">
+    <div class="card-header bg-dark text-white ">
+        <div class="d-flex justify-content-between align-items-center">
+            
+            <h3 class="mb-0"> <i class="bi bi-film"></i> {{ category.name }} Movies</h3>
+        </div>    
+    </div>
+
+            <div class=" card-body">
+                <div class="row g-4">
+                    
+                {% for movie in movies %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <a href="{% url 'movie_detail' movie.id %}"> 
+                            <img src=" {{ movie.poster.url }}" class="card-img-top" style=" height:320px; object-fit:cover;">
+                             </a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"> {{  movie.title }} </h5>
+                                <p class="mb-2">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <strong> {{ movie.rating }} </strong>
+                                </p>
+
+
+                                <p class="text-muted mb-2">
+                                    <i class="bi bi-tags"></i> {{ movie.category.name }}
+                                </p>
+
+                                <p class="text-muted small">
+                                    <i class="bi bi-calendar-event"></i>  {{ movie.release_date }}
+                                </p>
+
+                                <a href="{% url 'movie_detail' movie.id %}" class="btn btn-dark w-100">
+                                    <i class="bi bi-eye"></i>View Details 
+                                </a>
+                            </div>
+                        </div>
+                    </div>   
+                
+
+                {% empty %}
+                    <p>No Movies found in this category.</p>
+                {% endfor %}
+
+
+                    <a href="{% url 'home' %}" class="btn btn-dark"> Back to Home</a>
+                </div>
+            </div>
+  
+
+</div>
+
+
+
+
+
+
+
+
+    
+    
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'accounts/base.html' %}
+{% block title %}
+Login 
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow border-0">
+            <div class="card-header bg-dark text-white">
+                <h3 class="mb-0"> <i class="bi bi-person"></i> LOGIN</h3>
+            </div>
+
+
+            <div class="card-body ">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label >USERNAME </label>
+                    <input type="text" name="username" >
+                    <br><br>
+                    <LABEL>PASSWORD</LABEL>
+                    <input type="password" name="password">
+                    <br><br>
+                    <button type="submit">LOGIN</button>
+                    <br><br>
+                    <p>
+                        Don't have an account?
+                        <a href="{% url 'register' %}" class="btn btn-dark">Register</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+{% endblock%}
