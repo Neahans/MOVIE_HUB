@@ -9,19 +9,27 @@ A Django-based movie management and discovery web application where users can br
 
 ### 🏠 Home Page
 
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/Home.png)
 
 ### 🔐 Login Page
 
-![Login Page](screenshots/login.png)
+![Login Page](screenshots/Login.png)
 
 ### 📝 Registration Page
 
-![Registration Page](screenshots/register.png)
+![Registration Page](screenshots/Registration.png)
+
+### 🎭 Category Page
+
+![Category Page](screenshots/Category.png)
 
 ### 🎬 Movie Details
 
-![Movie Details](screenshots/movie-detail.png)
+![Movie Details](screenshots/Movie_detail.png)
+
+### 🎥 Movie Details - Additional View
+
+![Movie Details](screenshots/Movie__detail.png)
 
 ## ✨ Features
 
